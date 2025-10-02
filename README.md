@@ -52,29 +52,29 @@ dependencies:
   <table>
     <tr>
       <td align="center">
-        <img src="screenshots/login.png" width="200" alt="로그인 화면"/>
+        <img src="github_img/login.png" width="200" alt="로그인 화면"/>
         <br/><b>로그인 화면</b>
       </td>
       <td align="center">
-        <img src="screenshots/dashboard.png" width="200" alt="대시보드"/>
+        <img src="github_img/main.png" width="200" alt="대시보드"/>
         <br/><b>메인 대시보드</b>
       </td>
       <td align="center">
-        <img src="screenshots/medicine_list.png" width="200" alt="약물 목록"/>
+        <img src="github_img/info.png" width="200" alt="약물 목록"/>
         <br/><b>약물 관리</b>
       </td>
     </tr>
     <tr>
       <td align="center">
-        <img src="screenshots/schedule.png" width="200" alt="복용 스케줄"/>
+        <img src="github_img/why.png" width="200" alt="복용 스케줄"/>
         <br/><b>복용 스케줄</b>
       </td>
       <td align="center">
-        <img src="screenshots/statistics.png" width="200" alt="통계"/>
+        <img src="github_img/tog.png" width="200" alt="통계"/>
         <br/><b>복용 통계</b>
       </td>
       <td align="center">
-        <img src="screenshots/ai_recommendation.png" width="200" alt="AI 추천"/>
+        <img src="github_img/ai.png" width="200" alt="AI 추천"/>
         <br/><b>AI 추천</b>
       </td>
     </tr>
@@ -93,7 +93,7 @@ dependencies:
 
 1. **저장소 클론**
 ```bash
-git clone https://github.com/your-username/medicine_project.git
+git clone https://github.com/choimj1717/medicine_project.git
 cd medicine_project
 ```
 
@@ -181,5 +181,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <div align="center">
-  Made with ❤️ by Your Name
+  Made with ❤️ by 명준 choi's
 </div>
