@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "373334901454",
+    "project_id": "fulttermedicine",
+    "storage_bucket": "fulttermedicine.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:373334901454:android:fced9f7be43a619b57869f",
+        "android_client_info": {
+          "package_name": "com.example.medicine_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZj3m0dfp3jUmKgNyC_rLKwLsVBaaUcsI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
