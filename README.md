@@ -1,4 +1,4 @@
-# 💊 Medicine Management App
+#  Medicine Management App
 
 > AI 기반 스마트 약물 관리 앱
 
@@ -182,4 +182,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
   Made with ❤️ by 명준 choi's
+  language from dart and flutter
 </div>
