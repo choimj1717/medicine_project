@@ -45,3 +45,5 @@ app.*.map.json
 
 # API Keys
 lib/config/api_keys.dart
+
+/github_img
