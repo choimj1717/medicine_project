@@ -3,10 +3,11 @@ import 'package:http/http.dart' as http;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:intl/intl.dart';
+import '../config/api_keys.dart';
 
 class AIRecommendationService {
-  static const String _apiKey = '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'; // Replace with your API key
-  static const String _apiUrl = 'https://api.openai.com/v1/chat/completions';
+  static const String _apiKey = ApiKeys.openaiApiKey;
+  static const String _apiUrl = ApiKeys.openaiAPiUrl;
 
   static Future<String> getRecommendation() async {
     try {

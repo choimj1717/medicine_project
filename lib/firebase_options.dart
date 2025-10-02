@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart'
     show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import '../config/api_keys.dart';
 
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
@@ -29,45 +30,45 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAkCxgdgeQ-XloAWDH-QYPvyYjHbTML0iM',
-    appId: '1:373334901454:android:fced9f7be43a619b57869f',
-    messagingSenderId: '373334901454',
-    projectId: 'fulttermedicine',
-    storageBucket: 'fulttermedicine.appspot.com',
+    apiKey: Forebase_Key.firebaseApiKey,
+    appId: Forebase_Key.firebaseAppId,
+    messagingSenderId: Forebase_Key.firebaseMessagingSenderId,
+    projectId: Forebase_Key.firebaseProjectId,
+    storageBucket: Forebase_Key.firebaseStorageBucket,
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAkCxgdgeQ-XloAWDH-QYPvyYjHbTML0iM',
-    appId: '1:373334901454:android:fced9f7be43a619b57869f',
-    messagingSenderId: '373334901454',
-    projectId: 'fulttermedicine',
-    storageBucket: 'fulttermedicine.appspot.com',
+    apiKey: Forebase_Key.firebaseApiKey,
+    appId: Forebase_Key.firebaseAppId,
+    messagingSenderId: Forebase_Key.firebaseMessagingSenderId,
+    projectId: Forebase_Key.firebaseProjectId,
+    storageBucket: Forebase_Key.firebaseStorageBucket,
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAkCxgdgeQ-XloAWDH-QYPvyYjHbTML0iM',
-    appId: '1:373334901454:android:fced9f7be43a619b57869f',
-    messagingSenderId: '373334901454',
-    projectId: 'fulttermedicine',
-    storageBucket: 'fulttermedicine.appspot.com',
-    iosBundleId: 'com.example.medicineProject',
+    apiKey: Forebase_Key.firebaseApiKey,
+    appId: Forebase_Key.firebaseAppId,
+    messagingSenderId: Forebase_Key.firebaseMessagingSenderId,
+    projectId: Forebase_Key.firebaseProjectId,
+    storageBucket: Forebase_Key.firebaseStorageBucket,
+    iosBundleId: Forebase_Key.iosBundleId,
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAkCxgdgeQ-XloAWDH-QYPvyYjHbTML0iM',
-    appId: '1:373334901454:android:fced9f7be43a619b57869f',
-    messagingSenderId: '373334901454',
-    projectId: 'fulttermedicine',
-    storageBucket: 'fulttermedicine.appspot.com',
-    iosBundleId: 'com.example.medicineProject',
+    apiKey: Forebase_Key.firebaseApiKey,
+    appId: Forebase_Key.firebaseAppId,
+    messagingSenderId: Forebase_Key.firebaseMessagingSenderId,
+    projectId: Forebase_Key.firebaseProjectId,
+    storageBucket: Forebase_Key.firebaseStorageBucket,
+    iosBundleId: Forebase_Key.iosBundleId,
   );
 
   static const FirebaseOptions windows = FirebaseOptions(
-    apiKey: 'AIzaSyAkCxgdgeQ-XloAWDH-QYPvyYjHbTML0iM',
-    appId: '1:373334901454:android:fced9f7be43a619b57869f',
-    messagingSenderId: '373334901454',
-    projectId: 'fulttermedicine',
-    storageBucket: 'fulttermedicine.appspot.com',
+    apiKey: Forebase_Key.firebaseApiKey,
+    appId: Forebase_Key.firebaseAppId,
+    messagingSenderId: Forebase_Key.firebaseMessagingSenderId,
+    projectId: Forebase_Key.firebaseProjectId,
+    storageBucket: Forebase_Key.firebaseStorageBucket,
   );
 
 }
