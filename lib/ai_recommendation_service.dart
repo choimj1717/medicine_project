@@ -9,6 +9,38 @@ class AIRecommendationService {
   static const String _apiKey = ApiKeys.openaiApiKey;
   static const String _apiUrl = ApiKeys.openaiAPiUrl;
 
+  static Future<String> testApiKey() async {
+    try {
+      final response = await http.post(
+        Uri.parse(_apiUrl),
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer $_apiKey',
+        },
+        body: jsonEncode({
+          'model': 'gpt-3.5-turbo',
+          'messages': [
+            {
+              'role': 'user',
+              'content': 'Hello, this is a test message. Please respond with "API test successful!"'
+            }
+          ],
+          'max_tokens': 20,
+        }),
+      );
+      
+      if (response.statusCode == 200) {
+        final data = jsonDecode(response.body);
+        final content = data['choices']?[0]?['message']?['content'];
+        return '✅ API 테스트 성공!\n응답: $content';
+      } else {
+        return '❌ API 테스트 실패\n상태 코드: ${response.statusCode}\n오류: ${response.body}';
+      }
+    } catch (e) {
+      return '❌ API 테스트 실패\n오류: $e';
+    }
+  }
+
   static Future<String> getRecommendation() async {
     try {
       final analysisData = await _analyzeUserData();

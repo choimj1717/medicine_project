@@ -11,6 +11,8 @@ class AIRecommendationScreen extends StatefulWidget {
 class _AIRecommendationScreenState extends State<AIRecommendationScreen> {
   String? recommendation;
   bool isLoading = false;
+  String? testResult;
+  bool isTesting = false;
 
   @override
   void initState() {
@@ -30,6 +32,22 @@ class _AIRecommendationScreenState extends State<AIRecommendationScreen> {
       setState(() {
         recommendation = '추천을 가져오는 중 오류가 발생했습니다.';
         isLoading = false;
+      });
+    }
+  }
+
+  Future<void> _testApiKey() async {
+    setState(() => isTesting = true);
+    try {
+      final result = await AIRecommendationService.testApiKey();
+      setState(() {
+        testResult = result;
+        isTesting = false;
+      });
+    } catch (e) {
+      setState(() {
+        testResult = '❌ API 테스트 실패\n오류: $e';
+        isTesting = false;
       });
     }
   }
@@ -198,6 +216,90 @@ class _AIRecommendationScreenState extends State<AIRecommendationScreen> {
                   _buildTipItem('📱', '알림 활용하기', '스마트폰 알림을 설정해 복용 시간을 놓치지 마세요'),
                   _buildTipItem('💊', '약통 준비하기', '일주일치 약을 미리 준비해두면 편리합니다'),
                   _buildTipItem('📝', '복용 기록하기', '복용 여부를 체크하여 누락을 방지하세요'),
+                ],
+              ),
+            ),
+            
+            const SizedBox(height: 24),
+            
+            // API 키 테스트 섹션
+            Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.1),
+                    spreadRadius: 1,
+                    blurRadius: 10,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      Icon(Icons.api, color: Colors.green[600]),
+                      const SizedBox(width: 8),
+                      const Text(
+                        'API 키 테스트',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 16),
+                  
+                  ElevatedButton.icon(
+                    onPressed: isTesting ? null : _testApiKey,
+                    icon: isTesting 
+                        ? const SizedBox(
+                            width: 16,
+                            height: 16,
+                            child: CircularProgressIndicator(strokeWidth: 2),
+                          )
+                        : const Icon(Icons.play_arrow),
+                    label: Text(isTesting ? 'API 테스트 중...' : 'API 키 테스트'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green[600],
+                      foregroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                  ),
+                  
+                  if (testResult != null) ...[
+                    const SizedBox(height: 16),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: testResult!.contains('✅') 
+                            ? Colors.green[50] 
+                            : Colors.red[50],
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(
+                          color: testResult!.contains('✅') 
+                              ? Colors.green[200]! 
+                              : Colors.red[200]!,
+                        ),
+                      ),
+                      child: Text(
+                        testResult!,
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: testResult!.contains('✅') 
+                              ? Colors.green[800] 
+                              : Colors.red[800],
+                        ),
+                      ),
+                    ),
+                  ],
                 ],
               ),
             ),
