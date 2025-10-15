@@ -93,7 +93,7 @@ class AIRecommendationService {
 
 
 
-    final recentRecordsCount = dailyRecords.values.fold(0, (sum, count) => sum + count);
+    final recentRecordsCount = dailyRecords.values.fold<int>(0, (sum, count) => sum + count);
     
     return '''
 등록된 약물 수: ${medicines.docs.length}개

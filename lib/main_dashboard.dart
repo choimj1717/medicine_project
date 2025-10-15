@@ -399,6 +399,9 @@ class DashboardHome extends StatelessWidget {
           .where('userId', isEqualTo: FirebaseAuth.instance.currentUser?.uid)
           .snapshots(),
       builder: (context, snapshot) {
+        if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+          return const Text('등록된 약물이 없습니다.');
+        }
         return Column(
           children: snapshot.data!.docs.take(3).map((doc) {
             final data = doc.data() as Map<String, dynamic>;
